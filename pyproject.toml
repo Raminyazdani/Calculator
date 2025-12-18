@@ -1,0 +1,40 @@
+[project]
+name = "calculator-cli"
+version = "0.1.0"
+description = "Terminal calculator with prompt_toolkit and Rich"
+authors = [{ name = "Ramin Yazdani" }]
+readme = "README.md"
+license = { file = "LICENSE.md" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Utilities",
+]
+keywords = ["calculator", "tui", "prompt_toolkit", "rich"]
+requires-python = ">=3.10"
+dependencies = [
+    "rich>=13,<14",
+    "prompt_toolkit>=3.0,<4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7,<8"]
+
+[project.urls]
+Homepage = "https://github.com/Raminyazdani/Calculator"
+Repository = "https://github.com/Raminyazdani/Calculator"
+
+[project.scripts]
+calculator = "calculator_cli.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
